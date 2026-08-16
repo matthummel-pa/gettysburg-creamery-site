@@ -206,21 +206,21 @@ nav.main-nav a.is-active, nav.main-nav a:hover{color:var(--strawberry);}
   z-index:3;
   background-color:#ff6b9d;
   background-image:url("images/scoop-hero-pink.jpg");
-  background-position:50% 42%;
+  background-position:50% 28%;
 }
 .scoop.s1::before{background:#ff6b9d;}
 .scoop.s2{
   z-index:2;transform:translateX(18px);
   background-color:#19c98a;
   background-image:url("images/scoop-hero-teal.jpg");
-  background-position:50% 26%;
+  background-position:50% 42%;
 }
 .scoop.s2::before{background:#19c98a;}
 .scoop.s3{
   z-index:1;transform:translateX(-10px);
   background-color:#ffe14a;
   background-image:url("images/scoop-hero-yellow.jpg");
-  background-position:50% 28%;
+  background-position:48% 38%;
 }
 .scoop.s3::before{background:#ffe14a;}
 .cone{
