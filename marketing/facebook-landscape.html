@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pintfield Facebook landscape</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&family=Shrikhand&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{width:1200px;height:630px;overflow:hidden;background:#2a160f;}
+  .frame{
+    width:1200px;height:630px;
+    background:#fff8ee;
+    border:10px solid #2a160f;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    position:relative;
+    overflow:hidden;
+  }
+  .spr{position:absolute;width:18px;height:7px;border-radius:6px;}
+  .a{background:#ff3d7f;top:28px;left:540px;transform:rotate(22deg);}
+  .b{background:#19c98a;top:52px;left:572px;transform:rotate(-18deg);}
+  .c{background:#ffe14a;bottom:36px;left:36px;transform:rotate(40deg);}
+  .d{background:#5b4dff;top:86px;left:520px;transform:rotate(8deg);}
+  .copy{padding:48px 36px 40px 48px;display:flex;flex-direction:column;justify-content:center;}
+  .kicker{
+    font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:.18em;
+    text-transform:uppercase;color:#ff3d7f;font-weight:700;margin-bottom:14px;
+  }
+  h1{
+    font-family:'Shrikhand',cursive;font-weight:400;font-size:62px;line-height:.95;
+    color:#2a160f;max-width:9ch;
+  }
+  h1 em{font-style:normal;color:#ff3d7f;}
+  p{margin-top:16px;font-family:'Outfit',sans-serif;font-size:22px;font-weight:600;color:#4a2c1f;max-width:22ch;line-height:1.3;}
+  .url{
+    margin-top:28px;align-self:flex-start;
+    font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;
+    background:#2a160f;color:#ffe14a;padding:12px 18px;border-radius:999px;
+  }
+  .art{
+    position:relative;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(180deg,#fff3fb,#fff8ee);
+  }
+  .stack{position:relative;width:280px;height:420px;}
+  .scoop{
+    width:210px;height:150px;margin:0 auto -32px;
+    border-radius:50% 50% 46% 46%;
+    border:6px solid #2a160f;
+    background-size:cover;background-position:center;
+    position:relative;z-index:3;
+  }
+  .s2{transform:translateX(22px);z-index:2;background-position:50% 42%;}
+  .s3{transform:translateX(-12px);z-index:1;background-position:48% 38%;}
+  .s1{background-image:url("../images/scoop-hero-pink.jpg");background-position:50% 8%;z-index:3;}
+  .s2{background-image:url("../images/scoop-hero-teal.jpg");}
+  .s3{background-image:url("../images/scoop-hero-yellow.jpg");}
+  .cone{
+    width:0;height:0;margin:0 auto;
+    border-left:90px solid transparent;
+    border-right:90px solid transparent;
+    border-top:170px solid #e8a45a;
+    filter:drop-shadow(0 8px 0 #2a160f);
+  }
+</style>
+</head>
+<body>
+  <div class="frame" id="frame">
+    <i class="spr a"></i><i class="spr b"></i><i class="spr c"></i><i class="spr d"></i>
+    <div class="copy">
+      <div class="kicker">Gettysburg · Adams County</div>
+      <h1>32 scoops. <em>Churned this morning.</em></h1>
+      <p>A live freezer case the owner can update — no developer required.</p>
+      <div class="url">pintfield-creamery.netlify.app</div>
+    </div>
+    <div class="art">
+      <div class="stack">
+        <div class="scoop s1"></div>
+        <div class="scoop s2"></div>
+        <div class="scoop s3"></div>
+        <div class="cone"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

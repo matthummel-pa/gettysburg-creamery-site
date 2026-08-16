@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pintfield Facebook square</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&family=Shrikhand&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{width:1080px;height:1080px;background:#2a160f;}
+  .frame{
+    width:1080px;height:1080px;background:#fff8ee;border:12px solid #2a160f;
+    padding:56px 52px 48px;display:flex;flex-direction:column;
+    position:relative;overflow:hidden;
+  }
+  .spr{position:absolute;width:20px;height:8px;border-radius:6px;}
+  .a{background:#ff3d7f;top:40px;right:70px;transform:rotate(20deg);}
+  .b{background:#19c98a;top:68px;right:42px;transform:rotate(-16deg);}
+  .c{background:#ffe14a;top:52px;right:108px;transform:rotate(38deg);}
+  .kicker{
+    font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:.2em;
+    text-transform:uppercase;color:#ff3d7f;font-weight:700;
+  }
+  h1{
+    font-family:'Shrikhand',cursive;font-weight:400;font-size:72px;line-height:.95;
+    color:#2a160f;margin:16px 0 18px;max-width:10ch;
+  }
+  h1 em{font-style:normal;color:#ff3d7f;}
+  .pills{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px;}
+  .pill{
+    border:4px solid #2a160f;border-radius:999px;padding:10px 16px;
+    font-family:'Outfit',sans-serif;font-weight:800;font-size:20px;
+    box-shadow:4px 4px 0 #2a160f;
+  }
+  .pink{background:#ff3d7f;color:#fff;}
+  .mint{background:#19c98a;}
+  .lemon{background:#ffe14a;}
+  .faces{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;flex:1;}
+  .face{
+    border:5px solid #2a160f;border-radius:50% 50% 46% 46%;
+    background-size:cover;min-height:280px;
+    box-shadow:8px 8px 0 #2a160f;
+  }
+  .f1{background-image:url("../images/scoop-hero-pink.jpg");background-position:50% 10%;}
+  .f2{background-image:url("../images/scoop-hero-teal.jpg");background-position:50% 42%;}
+  .f3{background-image:url("../images/scoop-hero-yellow.jpg");background-position:48% 38%;}
+  .foot{
+    margin-top:28px;display:flex;justify-content:space-between;align-items:center;
+  }
+  .brand{font-family:'Shrikhand',cursive;font-size:36px;color:#2a160f;}
+  .brand small{display:block;font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;color:#7a6458;}
+  .url{
+    font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;
+    background:#2a160f;color:#ffe14a;padding:14px 20px;border-radius:999px;
+  }
+</style>
+</head>
+<body>
+  <div class="frame" id="frame">
+    <i class="spr a"></i><i class="spr b"></i><i class="spr c"></i>
+    <div class="kicker">Ridges &amp; Valleys Studio</div>
+    <h1>32 scoops. <em>Churned this morning.</em></h1>
+    <div class="pills">
+      <span class="pill pink">Live freezer case</span>
+      <span class="pill mint">Owner Scoop Board</span>
+      <span class="pill lemon">Cakes · cart · login</span>
+    </div>
+    <div class="faces">
+      <div class="face f1"></div>
+      <div class="face f2"></div>
+      <div class="face f3"></div>
+    </div>
+    <div class="foot">
+      <div class="brand">Pintfield<small>Gettysburg creamery concept</small></div>
+      <div class="url">pintfield-creamery.netlify.app</div>
+    </div>
+  </div>
+</body>
+</html>
