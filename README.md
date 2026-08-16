@@ -39,8 +39,16 @@ python3 -m http.server 4173
 
 Then visit http://localhost:4173/
 
-## GitHub Pages
+## GitHub Pages preview
 
-The live preview is published from `main` by `.github/workflows/pages.yml`.
+This repo is a static site at the branch root (same setup as the other Ridges & Valleys HTML concepts).
 
-Preview URL: https://matthummel-pa.github.io/gettysburg-creamery-site/
+**Preview URL:** https://matthummel-pa.github.io/gettysburg-creamery-site/
+
+GitHub Apps cannot flip Pages on via API, so enable it once in the repo:
+
+1. Open [Settings → Pages](https://github.com/matthummel-pa/gettysburg-creamery-site/settings/pages)
+2. **Build and deployment → Source:** Deploy from a branch
+3. **Branch:** `main` / `/(root)` → Save
+
+The first publish usually takes a minute. After that, every push to `main` updates the preview.
