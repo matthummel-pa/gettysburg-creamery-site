@@ -195,15 +195,34 @@ nav.main-nav a.is-active, nav.main-nav a:hover{color:var(--strawberry);}
   border:4px solid var(--chocolate);
   position:relative;
   box-shadow:inset -18px -10px 0 rgba(0,0,0,.08);
+  background-size:cover;
+  background-repeat:no-repeat;
 }
 .scoop::before{
-  content:"";position:absolute;width:28px;height:18px;background:inherit;border:4px solid var(--chocolate);
+  content:"";position:absolute;width:28px;height:18px;border:4px solid var(--chocolate);
   border-bottom:0;border-radius:16px 16px 0 0;top:-12px;left:28%;
 }
-.scoop.has-photo{padding:0;overflow:hidden;background:#fff;}
-.scoop.has-photo::before{display:none;}
-.scoop.has-photo img{width:100%;height:100%;object-fit:cover;display:block;}
-.scoop.s1,.scoop.s2,.scoop.s3{background:#fff;}
+.scoop.s1{
+  z-index:3;
+  background-color:#ff6b9d;
+  background-image:url("images/scoop-hero-pink.jpg");
+  background-position:50% 42%;
+}
+.scoop.s1::before{background:#ff6b9d;}
+.scoop.s2{
+  z-index:2;transform:translateX(18px);
+  background-color:#19c98a;
+  background-image:url("images/scoop-hero-teal.jpg");
+  background-position:50% 26%;
+}
+.scoop.s2::before{background:#19c98a;}
+.scoop.s3{
+  z-index:1;transform:translateX(-10px);
+  background-color:#ffe14a;
+  background-image:url("images/scoop-hero-yellow.jpg");
+  background-position:50% 28%;
+}
+.scoop.s3::before{background:#ffe14a;}
 .cone{
   width:0;height:0;margin:0 auto;
   border-left:78px solid transparent;
