@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pintfield Bluesky</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&family=Shrikhand&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{width:1200px;height:675px;overflow:hidden;background:#2a160f;}
+  .frame{
+    width:1200px;height:675px;background:#fff8ee;border:10px solid #2a160f;
+    padding:40px 44px 36px;display:flex;flex-direction:column;position:relative;overflow:hidden;
+  }
+  .spr{position:absolute;width:18px;height:7px;border-radius:6px;}
+  .a{background:#5b4dff;top:28px;right:56px;transform:rotate(18deg);}
+  .b{background:#ff3d7f;top:48px;right:28px;transform:rotate(-14deg);}
+  .c{background:#19c98a;top:36px;right:92px;transform:rotate(32deg);}
+  .kicker{
+    font-family:'JetBrains Mono',monospace;font-size:15px;letter-spacing:.18em;
+    text-transform:uppercase;color:#5b4dff;font-weight:700;
+  }
+  h1{
+    font-family:'Shrikhand',cursive;font-weight:400;font-size:58px;line-height:.95;
+    color:#2a160f;margin:10px 0 12px;max-width:16ch;
+  }
+  h1 em{font-style:normal;color:#ff3d7f;}
+  .row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;flex:1;min-height:0;}
+  .card{
+    border:5px solid #2a160f;border-radius:28px;overflow:hidden;
+    display:flex;flex-direction:column;box-shadow:8px 8px 0 #2a160f;background:#fff;
+  }
+  .pic{flex:1;background-size:cover;min-height:220px;}
+  .p1{background-image:url("../images/scoop-hero-pink.jpg");background-position:50% 10%;}
+  .p2{background-image:url("../images/scoop-hero-teal.jpg");background-position:50% 42%;}
+  .p3{background-image:url("../images/scoop-hero-yellow.jpg");background-position:48% 38%;}
+  .lab{
+    font-family:'Outfit',sans-serif;font-weight:800;font-size:18px;padding:12px 14px;
+    border-top:4px solid #2a160f;
+  }
+  .c1 .lab{background:#ff3d7f;color:#fff;}
+  .c2 .lab{background:#19c98a;}
+  .c3 .lab{background:#ffe14a;}
+  .foot{margin-top:22px;display:flex;justify-content:space-between;align-items:center;}
+  .brand{font-family:'Shrikhand',cursive;font-size:28px;}
+  .brand small{display:block;font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:#7a6458;}
+  .url{
+    font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;
+    background:#5b4dff;color:#fff;padding:12px 18px;border-radius:999px;border:3px solid #2a160f;
+  }
+</style>
+</head>
+<body>
+  <div class="frame">
+    <i class="spr a"></i><i class="spr b"></i><i class="spr c"></i>
+    <div class="kicker">Ridges &amp; Valleys Studio · Gettysburg</div>
+    <h1>32 scoops. <em>The owner runs the board.</em></h1>
+    <div class="row">
+      <div class="card c1"><div class="pic p1"></div><div class="lab">Live 32-tub case</div></div>
+      <div class="card c2"><div class="pic p2"></div><div class="lab">Scoop Board</div></div>
+      <div class="card c3"><div class="pic p3"></div><div class="lab">Cakes · cart · login</div></div>
+    </div>
+    <div class="foot">
+      <div class="brand">Pintfield<small>Gettysburg creamery concept</small></div>
+      <div class="url">pintfield-creamery.netlify.app</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -34,3 +34,9 @@ Desktop is 1440×900 (full page). Mobile is 390×844 (full page).
 - Link / landscape (1200×630): `facebook-landscape.png`
 - Caption (studio + shop versions): `facebook-post.md`
 
+## Twitter / X and Bluesky
+
+- X image (1200×675): `twitter.png`
+- Bluesky image (1200×675): `bluesky.png`
+- Captions: `twitter-bluesky-posts.md`
+
