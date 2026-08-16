@@ -8,9 +8,9 @@ This is a design concept — not a real business. The pattern is inspired by a l
 
 ## What’s in the concept
 
-- Bold, animated HTML/CSS scoop shop (hero cone, drips, sprinkles, marquee, hover-tubs)
+- Bold, animated HTML/CSS scoop shop (hero cone with customer photos, drips, sprinkles, marquee, photographed flavor tubs)
 - Homepage **live freezer case** (32 + 4 DF + 4 NSA) driven by the Scoop Board
-- **Scoop Board** (`scoop-board.html`) — owner packs tubs, features a scoop, publishes immediately, or schedules a future drop that auto-promotes on that date
+- **Scoop Board** (`scoop-board.html`) — owner packs tubs, features a scoop, **uploads flavor photos**, publishes immediately, or schedules a future drop that auto-promotes on that date
 - Walk-up **menu** with scoop / shake / pint prices
 - **Order** page: ice cream cakes, cupcakes, sandwich cookies, pints, bulk tubs, pup treats
 - Separate **cart & payment** page (demo checkout, login required)
@@ -26,8 +26,11 @@ This is a design concept — not a real business. The pattern is inspired by a l
 3. Click a freezer slot, then a flavor chip
 4. **Publish to homepage now** or pick a **run date** and **Schedule this lineup**
 5. Reload `index.html` — today’s case and the homepage note update
+6. **Flavor photos** — upload a JPG/PNG per flavor (compressed in the browser). Reset restores the stock photo.
 
-The concept stores the board in `localStorage` so it works on GitHub Pages with no backend. A production build would persist the same JSON to a CMS or Netlify Blobs so every visitor sees one case.
+The concept stores the board **and custom flavor photos** in `localStorage` so it works on GitHub Pages with no backend. A production build would persist the same JSON to a CMS or Netlify Blobs so every visitor sees one case.
+
+Photo credits: see `IMAGES.md`.
 
 ## Order, cart, and login
 

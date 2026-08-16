@@ -215,9 +215,18 @@
       var cat = shop.CATEGORIES.filter(function (c) { return c.id === active; })[0];
       var intro = document.getElementById("order-intro");
       if (intro && cat) intro.textContent = cat.blurb;
+      var CAT_PHOTOS = {
+        cakes: "images/treat-cake.jpg",
+        cupcakes: "images/scoop-pexels-3.jpg",
+        cookies: "images/pexels-eat.jpg",
+        packed: "images/scoop-pexels-2.jpg",
+        bulk: "images/scoop-sundae.jpg",
+        pups: "images/scoop-berry.jpg"
+      };
       grid.innerHTML = shop.PRODUCTS.filter(function (p) { return p.category === active; }).map(function (p) {
+        var photo = CAT_PHOTOS[p.category] || "images/scoop-vanilla.jpg";
         return "<article class=\"product-card\">" +
-          "<div class=\"ph\" style=\"background:linear-gradient(135deg," + p.swatch + ",#fff8ee)\"></div>" +
+          "<div class=\"ph\" style=\"background-image:url('" + photo + "')\"></div>" +
           "<div class=\"body\">" +
             "<h3>" + p.name + "</h3>" +
             "<p class=\"price\">" + money(p.price) + (p.noticeDays ? "+" : "") + "</p>" +

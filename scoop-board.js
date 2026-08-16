@@ -6,12 +6,15 @@
   if (!window.Pintfield) return;
   var P = window.Pintfield;
 
+  function escapeAttr(s) {
+    return String(s || "").replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
+  }
+
   function tubHTML(flavor, extraClass) {
     if (!flavor) return "";
-    var ink = flavor.ink || "#2a160f";
+    var photo = P.photoFor(flavor);
     return (
-      '<div class="tub ' + (extraClass || "") + '" style="background:' + flavor.color + ";color:" + ink + '">' +
-        '<span class="swirl" aria-hidden="true"></span>' +
+      '<div class="tub has-photo ' + (extraClass || "") + '" style="background-image:url(\'' + escapeAttr(photo) + "')\">" +
         "<strong>" + flavor.name + "</strong>" +
       "</div>"
     );
@@ -30,7 +33,7 @@
     var featured = P.byId(pub.featured);
     if (featEl && featured) {
       featEl.innerHTML =
-        '<div class="featured-scoop" style="background:' + featured.color + '"></div>' +
+        '<div class="featured-scoop" style="background-image:url(\'' + escapeAttr(P.photoFor(featured)) + "')\"></div>" +
         "<div><em class=\"mono\" style=\"color:var(--strawberry);font-style:normal;\">Scoop of the day</em>" +
         "<h3 style=\"margin:.15rem 0 0;font-size:1.35rem;\">" + featured.name + "</h3></div>";
     }
@@ -119,7 +122,9 @@
       var pal = document.getElementById("flavor-palette");
       if (!pal) return;
       pal.innerHTML = P.LIBRARY.map(function (f) {
-        return '<button type="button" class="chip" data-add="' + f.id + '" style="background:' + f.color + ';color:' + f.ink + '">' + f.name + "</button>";
+        return '<button type="button" class="chip" data-add="' + f.id + '">' +
+          '<span class="chip-thumb" style="background-image:url(\'' + escapeAttr(P.photoFor(f)) + "')\"></span>" +
+          f.name + "</button>";
       }).join("");
       pal.querySelectorAll("[data-add]").forEach(function (btn) {
         btn.addEventListener("click", function () {
@@ -144,8 +149,9 @@
           var flavor = P.byId(arr[i]);
           var active = selectedSlot.group === group && selectedSlot.index === i ? " style=\"outline:3px solid #5b4dff\"" : "";
           if (flavor) {
-            html += '<button type="button" class="slot filled" data-g="' + group + '" data-i="' + i + '"' + active +
-              ' style="background:' + flavor.color + ";color:" + flavor.ink + '">' + flavor.name + "</button>";
+            html += '<button type="button" class="slot filled" data-g="' + group + '" data-i="' + i + '"' + active + ">" +
+              '<span class="slot-thumb" style="background-image:url(\'' + escapeAttr(P.photoFor(flavor)) + "')\"></span>" +
+              flavor.name + "</button>";
           } else {
             html += '<button type="button" class="slot" data-g="' + group + '" data-i="' + i + '"' + active + ">empty</button>";
           }
@@ -208,11 +214,70 @@
       });
     }
 
+    function drawPhotos() {
+      var host = document.getElementById("photo-library");
+      if (!host) return;
+      host.innerHTML = P.LIBRARY.map(function (f) {
+        var src = P.photoFor(f);
+        return '<div class="photo-row">' +
+          '<img src="' + escapeAttr(src) + '" alt="' + escapeAttr(f.name) + '">' +
+          "<div><strong>" + f.name + "</strong>" +
+          '<div class="photo-actions">' +
+          '<label class="btn">Upload photo<input type="file" accept="image/*" data-photo="' + f.id + '" hidden></label>' +
+          '<button type="button" class="btn" data-clear-photo="' + f.id + '">Reset</button>' +
+          "</div></div></div>";
+      }).join("");
+      host.querySelectorAll("[data-photo]").forEach(function (input) {
+        input.addEventListener("change", function () {
+          var file = input.files && input.files[0];
+          if (!file) return;
+          compressImage(file, function (dataUrl) {
+            P.setFlavorPhoto(input.getAttribute("data-photo"), dataUrl);
+            drawPhotos();
+            drawPalette();
+            drawSlots();
+            var status = document.getElementById("board-status");
+            if (status) status.textContent = "Photo saved in this browser. Reload the homepage to see it on the case.";
+          });
+        });
+      });
+      host.querySelectorAll("[data-clear-photo]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          P.setFlavorPhoto(btn.getAttribute("data-clear-photo"), null);
+          drawPhotos();
+          drawPalette();
+          drawSlots();
+        });
+      });
+    }
+
+    function compressImage(file, cb) {
+      var reader = new FileReader();
+      reader.onload = function () {
+        var img = new Image();
+        img.onload = function () {
+          var size = 360;
+          var canvas = document.createElement("canvas");
+          canvas.width = size;
+          canvas.height = size;
+          var ctx = canvas.getContext("2d");
+          var scale = Math.max(size / img.width, size / img.height);
+          var w = img.width * scale;
+          var h = img.height * scale;
+          ctx.drawImage(img, (size - w) / 2, (size - h) / 2, w, h);
+          cb(canvas.toDataURL("image/jpeg", 0.72));
+        };
+        img.src = reader.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
     function drawBoard() {
       draft = P.cloneLineup(P.getBoard().published);
       drawPalette();
       drawSlots();
       drawSchedule();
+      drawPhotos();
     }
 
     var publishBtn = document.getElementById("publish-now");

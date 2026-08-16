@@ -8,7 +8,49 @@
   "use strict";
 
   var STORAGE_KEY = "pintfield-scoop-board-v1";
+  var PHOTO_KEY = "pintfield-flavor-photos-v1";
   var PIN = "17325";
+
+  var PHOTO_POOL = [
+    "images/scoop-vanilla.jpg",
+    "images/scoop-chocolate.jpg",
+    "images/scoop-cookies.jpg",
+    "images/scoop-pistachio.jpg",
+    "images/scoop-sundae.jpg",
+    "images/scoop-pexels-1.jpg",
+    "images/scoop-pexels-2.jpg",
+    "images/scoop-pexels-3.jpg",
+    "images/scoop-cones.jpg",
+    "images/scoop-berry.jpg",
+    "images/people-c.jpg",
+    "images/scoop-case.jpg",
+    "images/pix-scoop-5.jpg"
+  ];
+
+  var PHOTO_MAP = {
+    "sweet-cream": "images/scoop-vanilla.jpg",
+    "vanilla-bean": "images/scoop-vanilla.jpg",
+    "chocolate": "images/scoop-chocolate.jpg",
+    "strawberry": "images/scoop-pexels-2.jpg",
+    "peach": "images/scoop-sundae.jpg",
+    "mint-chip": "images/people-c.jpg",
+    "cookie-dough": "images/scoop-cookies.jpg",
+    "cookies-cream": "images/scoop-chocolate.jpg",
+    "cookie-monster": "images/scoop-pexels-1.jpg",
+    "birthday": "images/scoop-pistachio.jpg",
+    "cotton": "images/scoop-pexels-3.jpg",
+    "reeses": "images/scoop-cones.jpg",
+    "salty-caramel": "images/scoop-cookies.jpg",
+    "rocky": "images/scoop-chocolate.jpg",
+    "lemon": "images/scoop-pexels-3.jpg",
+    "raspberry": "images/scoop-berry.jpg",
+    "pistachio": "images/scoop-pexels-1.jpg",
+    "brownie": "images/scoop-cones.jpg",
+    "df-chocolate": "images/people-c.jpg",
+    "df-mango": "images/scoop-sundae.jpg",
+    "nsa-vanilla": "images/scoop-vanilla.jpg",
+    "nsa-chocolate": "images/scoop-chocolate.jpg"
+  };
 
   var LIBRARY = [
     { id: "sweet-cream", name: "Adams County Sweet Cream", color: "#fff6e0", ink: "#3a2418", tags: ["classic"], blurb: "The house base. Farm milk, extra yolks, a pinch of sea salt." },
@@ -139,6 +181,40 @@
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
   }
 
+  function hashId(id) {
+    var h = 0;
+    var s = String(id || "");
+    for (var i = 0; i < s.length; i++) h = ((h << 5) - h + s.charCodeAt(i)) | 0;
+    return Math.abs(h);
+  }
+
+  function customPhotos() {
+    try {
+      return JSON.parse(localStorage.getItem(PHOTO_KEY) || "{}");
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function defaultPhoto(id) {
+    if (PHOTO_MAP[id]) return PHOTO_MAP[id];
+    return PHOTO_POOL[hashId(id) % PHOTO_POOL.length];
+  }
+
+  function photoFor(flavor) {
+    var id = flavor && flavor.id ? flavor.id : flavor;
+    var custom = customPhotos()[id];
+    if (custom) return custom;
+    return defaultPhoto(id);
+  }
+
+  function setFlavorPhoto(id, dataUrl) {
+    var all = customPhotos();
+    if (dataUrl) all[id] = dataUrl;
+    else delete all[id];
+    localStorage.setItem(PHOTO_KEY, JSON.stringify(all));
+  }
+
   function applySchedule(data) {
     var today = todayISO();
     var due = (data.schedule || []).filter(function (item) {
@@ -186,6 +262,9 @@
     hydrate: hydrate,
     cloneLineup: function (lineup) {
       return JSON.parse(JSON.stringify(lineup));
-    }
+    },
+    photoFor: photoFor,
+    setFlavorPhoto: setFlavorPhoto,
+    customPhotos: customPhotos
   };
 })(window);
