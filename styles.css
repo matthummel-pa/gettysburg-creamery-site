@@ -204,11 +204,15 @@ nav.main-nav a.is-active, nav.main-nav a:hover{color:var(--strawberry);}
 }
 .scoop.s1{
   z-index:3;
+  height:148px;
+  border-radius:90px 90px 70px 70px / 92px 92px 64px 64px;
+  overflow:hidden;
   background-color:#ff6b9d;
   background-image:url("images/scoop-hero-pink.jpg");
-  background-position:50% 28%;
+  background-size:cover;
+  background-position:50% 6%;
 }
-.scoop.s1::before{background:#ff6b9d;}
+.scoop.s1::before{display:none;}
 .scoop.s2{
   z-index:2;transform:translateX(18px);
   background-color:#19c98a;
