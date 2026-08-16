@@ -39,6 +39,8 @@ python3 -m http.server 4173
 
 Then visit http://localhost:4173/
 
-## First-time Pages setup
+## GitHub Pages
 
-If the live URL 404s: **Settings → Pages → Deploy from a branch → `main` / (root)**.
+The live preview is published from `main` by `.github/workflows/pages.yml`.
+
+Preview URL: https://matthummel-pa.github.io/gettysburg-creamery-site/
