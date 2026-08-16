@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=600">
+<title>Pintfield features — cold email graphic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Shrikhand&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --vanilla:#fff8ee;
+    --strawberry:#ff3d7f;
+    --mint:#19c98a;
+    --lemon:#ffe14a;
+    --blueberry:#5b4dff;
+    --chocolate:#2a160f;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    width:600px;
+    background:#fff8ee;
+    color:#24150f;
+    font-family:'Outfit',system-ui,sans-serif;
+  }
+  .card{
+    width:600px;
+    background:#fff8ee;
+    border:6px solid #2a160f;
+    position:relative;
+    overflow:hidden;
+    padding:28px 26px 24px;
+  }
+  .sprinkle{
+    position:absolute;width:12px;height:5px;border-radius:5px;
+  }
+  .s1{background:#ff3d7f;top:18px;right:42px;transform:rotate(18deg);}
+  .s2{background:#19c98a;top:46px;right:22px;transform:rotate(-12deg);}
+  .s3{background:#ffe14a;top:22px;right:78px;transform:rotate(40deg);}
+  .s4{background:#5b4dff;bottom:28px;left:22px;transform:rotate(-24deg);}
+  .kicker{
+    font-family:'JetBrains Mono',ui-monospace,monospace;
+    font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    color:#ff3d7f;font-weight:700;margin:0 0 8px;
+  }
+  h1{
+    font-family:'Shrikhand',cursive;
+    font-weight:400;font-size:34px;line-height:1.05;
+    margin:0 0 8px;max-width:14ch;
+  }
+  h1 em{font-style:normal;color:#ff3d7f;}
+  .lead{
+    margin:0 0 18px;font-size:15px;line-height:1.45;max-width:46ch;
+  }
+  .scoops{
+    display:grid;grid-template-columns:1fr 1fr;gap:10px;
+  }
+  .feat{
+    border:3px solid #2a160f;border-radius:18px;padding:12px 12px 14px;
+    box-shadow:5px 5px 0 #2a160f;background:#fff;
+  }
+  .feat.pink{background:#ff3d7f;color:#fff;}
+  .feat.mint{background:#19c98a;}
+  .feat.lemon{background:#ffe14a;}
+  .feat.blue{background:#5b4dff;color:#fff;}
+  .feat.choc{background:#2a160f;color:#ffe14a;grid-column:1/-1;}
+  .feat.cream{background:#fffdf8;}
+  .dot{
+    width:22px;height:16px;border-radius:50%;border:2px solid #2a160f;
+    margin-bottom:8px;
+  }
+  .feat.pink .dot{background:#fff;}
+  .feat.mint .dot{background:#fff8ee;}
+  .feat.lemon .dot{background:#ff3d7f;}
+  .feat.blue .dot{background:#ffe14a;}
+  .feat.choc .dot{background:#19c98a;border-color:#ffe14a;}
+  .feat.cream .dot{background:#ff3d7f;}
+  .feat strong{
+    display:block;font-size:15px;font-weight:800;line-height:1.2;margin-bottom:4px;
+  }
+  .feat span{font-size:12.5px;line-height:1.35;display:block;opacity:.95;}
+  .foot{
+    margin-top:16px;display:flex;justify-content:space-between;gap:12px;align-items:end;
+  }
+  .studio{font-size:12px;font-weight:700;}
+  .studio b{display:block;font-family:'Shrikhand',cursive;font-weight:400;font-size:16px;}
+  .url{
+    font-family:'JetBrains Mono',ui-monospace,monospace;
+    font-size:10px;background:#2a160f;color:#ffe14a;
+    padding:8px 10px;border-radius:999px;font-weight:700;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <i class="sprinkle s1"></i><i class="sprinkle s2"></i><i class="sprinkle s3"></i><i class="sprinkle s4"></i>
+    <p class="kicker">Ridges &amp; Valleys Studio · Gettysburg</p>
+    <h1>A creamery site the owner can <em>actually run.</em></h1>
+    <p class="lead">Pintfield is a concept we built to show how a local scoop shop sells itself online — 32 flavors, cakes, three shops — without calling a developer every time the case changes.</p>
+    <div class="scoops">
+      <div class="feat pink">
+        <div class="dot"></div>
+        <strong>Live 32-tub freezer</strong>
+        <span>Today’s case is the homepage. Guests stop texting “do you have mint chip?”</span>
+      </div>
+      <div class="feat mint">
+        <div class="dot"></div>
+        <strong>Scoop Board for the owner</strong>
+        <span>Pack tubs, feature a scoop, publish now or schedule tomorrow’s drop.</span>
+      </div>
+      <div class="feat lemon">
+        <div class="dot"></div>
+        <strong>Menu, cakes &amp; cart</strong>
+        <span>Walk-up prices, ice cream cakes, cookies, pints, checkout, customer login.</span>
+      </div>
+      <div class="feat blue">
+        <div class="dot"></div>
+        <strong>3 shops, move-ready</strong>
+        <span>Gettysburg, New Oxford, McSherrystown — plus the 1153 Biglerville Rd move.</span>
+      </div>
+      <div class="feat cream">
+        <div class="dot"></div>
+        <strong>Dairy-free &amp; NSA</strong>
+        <span>Four DF + four no-sugar-added tubs on the board every day.</span>
+      </div>
+      <div class="feat choc">
+        <div class="dot"></div>
+        <strong>Built to demo, ready to brand as yours.</strong>
+        <span>Bold scoop-shop color, photo flavor tubs, jobs + owner inbox. Swap in your name, hours, and churn.</span>
+      </div>
+    </div>
+    <div class="foot">
+      <div class="studio"><b>Pintfield</b>Concept by Ridges &amp; Valleys</div>
+      <div class="url">pintfield-creamery.netlify.app</div>
+    </div>
+  </div>
+</body>
+</html>
