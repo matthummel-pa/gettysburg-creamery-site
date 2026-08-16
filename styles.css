@@ -234,7 +234,7 @@ nav.main-nav a.is-active, nav.main-nav a:hover{color:var(--strawberry);}
   overflow:hidden;border-top:3px solid var(--chocolate);border-bottom:3px solid var(--chocolate);
   padding:.7rem 0;font-weight:800;letter-spacing:.04em;
 }
-.marquee-track{display:flex;gap:2.4rem;width:max-content;animation:marquee 28s linear infinite;}
+.marquee-track{display:flex;gap:2.4rem;width:max-content;animation:marquee 72s linear infinite;}
 .marquee-track span{white-space:nowrap;font-size:.95rem;}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
