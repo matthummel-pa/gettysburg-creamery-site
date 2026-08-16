@@ -373,7 +373,11 @@
   async function initIdentity() {
     try {
       identityApi = await import("https://esm.sh/@netlify/identity");
-      await identityApi.handleAuthCallback();
+      try {
+        await identityApi.handleAuthCallback();
+      } catch (cbErr) {
+        /* Identity not enabled on this host */
+      }
       var user = await identityApi.getUser();
       if (user) {
         window.__pintfieldUser = { email: user.email, name: user.user_metadata && (user.user_metadata.full_name || user.user_metadata.name) };
