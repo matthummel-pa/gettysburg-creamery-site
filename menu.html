@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu &amp; prices — Pintfield Creamery</title>
+<meta name="description" content="Pintfield walk-up menu: scoops, shakes, toppings, pints, and specialty cakes. Prices subject to change. Concept by Ridges & Valleys Studio.">
+<link rel="canonical" href="https://matthummel-pa.github.io/gettysburg-creamery-site/menu.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Shrikhand&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Pintfield<small>Gettysburg creamery</small></span></a>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html">Today</a>
+      <a href="menu.html" class="is-active">Menu</a>
+      <a href="order.html">Order</a>
+      <a href="flavors.html">Flavors</a>
+      <a href="locations.html">Locations</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn" href="account.html" data-account-link>Log in</a>
+      <a class="btn btn-lemon btn-keep" href="cart.html">Cart <span class="cart-count" data-cart-count>0</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <p class="sec-kicker">Walk-up board · prices subject to change</p>
+      <h1>The menu.</h1>
+      <p style="max-width:54ch;font-size:1.15rem;">Scoops at the window, shakes after the battlefield loop, cakes when you remember a birthday at 4pm. Dairy-free add $1 per scoop. Order cakes, cupcakes, and cookies online — we need a little churn time.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="order.html">Order cakes &amp; treats</a>
+        <a class="btn btn-mint" href="flavors.html">See flavors</a>
+      </div>
+    </div>
+  </section>
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="menu-board" id="walkup-menu"></div>
+      <article class="menu-col" style="margin-top:1.2rem;">
+        <h2>Specialties — order online</h2>
+        <p>3-day notice on cakes and cupcakes. 7-day notice on gallons. Grab-and-go freezer is stocked if you cannot wait.</p>
+        <ul class="price-list">
+          <li><span><strong>Ice cream cake</strong><em>Small 6″ / medium 8″ / large 9×13</em></span><b>$26–$55+</b></li>
+          <li><span><strong>Cupcakes</strong><em>Each, or boxes of 6 and 12</em></span><b>$6+</b></li>
+          <li><span><strong>Ice cream sandwich cookies</strong><em>Two cookies, one scoop</em></span><b>$13.20</b></li>
+          <li><span><strong>Dairy-free snack cups</strong></span><b>$13.20</b></li>
+          <li><span><strong>Gallon / 2.5 gallon</strong><em>7-day notice</em></span><b>$42.45–$99.45</b></li>
+          <li><span><strong>Bone Appetit / pupcakes</strong></span><b>$2.83 / $6.60</b></li>
+        </ul>
+        <p style="margin-top:1rem;"><a class="btn btn-primary" href="order.html">Build an order</a></p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Pintfield Creamery concept.</span>
+      <span>Ridges &amp; Valleys Studio, Gettysburg PA.</span>
+    </div>
+  </div>
+</footer>
+<a href="#" class="concept-badge" id="concept-badge">Concept · Ridges &amp; Valleys Studio</a>
+<script src="flavors-data.js"></script>
+<script src="shop-data.js"></script>
+<script src="shop.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

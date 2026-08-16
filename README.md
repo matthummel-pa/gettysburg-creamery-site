@@ -11,6 +11,10 @@ This is a design concept — not a real business. The pattern is inspired by a l
 - Bold, animated HTML/CSS scoop shop (hero cone, drips, sprinkles, marquee, hover-tubs)
 - Homepage **live freezer case** (32 + 4 DF + 4 NSA) driven by the Scoop Board
 - **Scoop Board** (`scoop-board.html`) — owner packs tubs, features a scoop, publishes immediately, or schedules a future drop that auto-promotes on that date
+- Walk-up **menu** with scoop / shake / pint prices
+- **Order** page: ice cream cakes, cupcakes, sandwich cookies, pints, bulk tubs, pup treats
+- Separate **cart & payment** page (demo checkout, login required)
+- **Customer login** via `@netlify/identity` when Identity is on; local demo account otherwise
 - Contact form for visitors → owner
 - Job application form (role, shop, availability, resume upload)
 - Locations including the Gettysburg move to 1153 Biglerville Road (late summer 2026)
@@ -24,6 +28,15 @@ This is a design concept — not a real business. The pattern is inspired by a l
 5. Reload `index.html` — today’s case and the homepage note update
 
 The concept stores the board in `localStorage` so it works on GitHub Pages with no backend. A production build would persist the same JSON to a CMS or Netlify Blobs so every visitor sees one case.
+
+## Order, cart, and login
+
+- `menu.html` — walk-up price board
+- `order.html` — categorized specialties (customize flavor / drizzle / pickup, add to cart)
+- `cart.html` — line items, PA tax, pay desk
+- `account.html` — log in / create account
+
+Enable Identity on the Netlify project (**Project configuration → Identity**) for real email accounts. Until then, signup stores a demo user in the browser so checkout still works.
 
 ## Forms
 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer login — Pintfield Creamery</title>
+<meta name="description" content="Log in or create a Pintfield customer account to pay for cake and treat pickup orders.">
+<link rel="canonical" href="https://matthummel-pa.github.io/gettysburg-creamery-site/account.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Shrikhand&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Pintfield<small>Gettysburg creamery</small></span></a>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html">Today</a>
+      <a href="menu.html">Menu</a>
+      <a href="order.html">Order</a>
+      <a href="flavors.html">Flavors</a>
+      <a href="locations.html">Locations</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn" href="account.html" data-account-link>Log in</a>
+      <a class="btn btn-lemon btn-keep" href="cart.html">Cart <span class="cart-count" data-cart-count>0</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <p class="sec-kicker">Customers</p>
+      <h1>Your scoop account.</h1>
+      <p style="max-width:52ch;font-size:1.15rem;">Log in to pay, see pickup orders, and keep cake messages attached to you — not a shared shop phone.</p>
+    </div>
+  </section>
+  <section style="padding-top:0;">
+    <div class="container" id="account-app">
+      <div id="account-forms" class="form-card" style="max-width:520px;">
+        <div class="hero-actions">
+          <button type="button" class="btn btn-primary is-active" data-auth-tab="login">Log in</button>
+          <button type="button" class="btn" data-auth-tab="signup">Create account</button>
+        </div>
+        <form id="login-form">
+          <label>Email <input name="email" type="email" required autocomplete="email"></label>
+          <label>Password <input name="password" type="password" required autocomplete="current-password"></label>
+          <button class="btn btn-primary" type="submit" style="margin-top:1rem;">Log in</button>
+          <p class="form-status" role="status"></p>
+        </form>
+        <form id="signup-form" hidden>
+          <label>Name <input name="name" type="text" required autocomplete="name"></label>
+          <label>Email <input name="email" type="email" required autocomplete="email"></label>
+          <label>Password <input name="password" type="password" required minlength="8" autocomplete="new-password"></label>
+          <button class="btn btn-mint" type="submit" style="margin-top:1rem;">Create account</button>
+          <p class="form-status" role="status"></p>
+        </form>
+        <p class="tiny">Uses <code>@netlify/identity</code> when Identity is enabled on the Netlify project. Otherwise this demo stores a local account in your browser so the cart still works on GitHub Pages.</p>
+      </div>
+
+      <div id="account-logged" class="form-card" hidden>
+        <p class="sec-kicker">Signed in</p>
+        <h3 data-user-name>Guest</h3>
+        <p data-user-email></p>
+        <h4>Pickup orders</h4>
+        <ul class="order-list" id="account-orders"></ul>
+        <button type="button" class="btn" id="logout-btn">Log out</button>
+        <p style="margin-top:1rem;"><a class="btn btn-primary" href="order.html">Order treats</a> <a class="btn btn-lemon" href="cart.html">Cart</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Pintfield Creamery concept.</span>
+      <span>Ridges &amp; Valleys Studio, Gettysburg PA.</span>
+    </div>
+  </div>
+</footer>
+<a href="#" class="concept-badge" id="concept-badge">Concept · Ridges &amp; Valleys Studio</a>
+<script src="flavors-data.js"></script>
+<script src="shop-data.js"></script>
+<script src="shop.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

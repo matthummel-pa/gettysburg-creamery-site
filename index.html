@@ -44,14 +44,15 @@
     </a>
     <nav class="main-nav" id="main-nav">
       <a href="index.html" class="is-active">Today</a>
+      <a href="menu.html">Menu</a>
+      <a href="order.html">Order</a>
       <a href="flavors.html">Flavors</a>
-      <a href="treats.html">Cakes &amp; cups</a>
       <a href="locations.html">Locations</a>
-      <a href="contact.html">Contact / jobs</a>
+      <a href="contact.html">Contact</a>
     </nav>
     <div class="header-actions">
-      <a class="btn btn-lemon" href="scoop-board.html">Scoop Board</a>
-      <a class="btn btn-primary" href="contact.html">Say hi</a>
+      <a class="btn" href="account.html" data-account-link>Log in</a>
+      <a class="btn btn-lemon btn-keep" href="cart.html">Cart <span class="cart-count" data-cart-count>0</span></a>
       <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -66,7 +67,8 @@
         <p class="lead">Pintfield is a Gettysburg creamery concept with a live freezer case, three Adams County shops, and a Scoop Board the owner can update — or schedule — without calling a developer.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#todays-case">See today’s case</a>
-          <a class="btn btn-mint" href="locations.html">Find a shop</a>
+          <a class="btn btn-mint" href="order.html">Order cakes &amp; cookies</a>
+          <a class="btn btn-lemon" href="menu.html">Menu &amp; prices</a>
         </div>
         <div class="hero-meta">
           <div><b>32</b><span>daily ice cream flavors</span></div>
@@ -194,8 +196,10 @@
       <div>
         <h4>Menu</h4>
         <ul>
-          <li><a href="flavors.html">Flavor library</a></li>
-          <li><a href="treats.html">Cakes &amp; cups</a></li>
+          <li><a href="menu.html">Menu &amp; prices</a></li>
+          <li><a href="order.html">Order treats</a></li>
+          <li><a href="cart.html">Cart &amp; pay</a></li>
+          <li><a href="account.html">Customer login</a></li>
           <li><a href="scoop-board.html">Scoop Board</a></li>
         </ul>
       </div>
@@ -218,6 +222,8 @@
 <a href="#" class="concept-badge" id="concept-badge">Concept · Ridges &amp; Valleys Studio</a>
 <script src="flavors-data.js"></script>
 <script src="scoop-board.js"></script>
+<script src="shop-data.js"></script>
+<script src="shop.js"></script>
 <script src="main.js" defer></script>
 </body>
 </html>

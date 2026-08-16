@@ -1,0 +1,8 @@
+{
+  "name": "gettysburg-creamery-site",
+  "private": true,
+  "description": "Pintfield Creamery HTML concept. Browser shop login uses @netlify/identity via esm.sh when Identity is enabled.",
+  "dependencies": {
+    "@netlify/identity": "^1.1.0"
+  }
+}

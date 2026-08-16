@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cakes &amp; cups — Pintfield Creamery</title>
-<meta name="description" content="Ice cream cakes, cupcakes, and pre-scooped pints from Pintfield Creamery. Grab-and-go freezer with 20+ cakes. Concept by Ridges & Valleys Studio.">
-<link rel="canonical" href="https://matthummel-pa.github.io/gettysburg-creamery-site/treats.html">
+<title>Order cakes, cupcakes &amp; cookies — Pintfield Creamery</title>
+<meta name="description" content="Order Pintfield ice cream cakes, cupcakes, sandwich cookies, pints, bulk tubs, and pup treats for pickup in Gettysburg, New Oxford, or McSherrystown.">
+<link rel="canonical" href="https://matthummel-pa.github.io/gettysburg-creamery-site/order.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Shrikhand&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -35,37 +35,17 @@
 <main id="main">
   <section class="page-hero">
     <div class="container">
-      <p class="sec-kicker">Grab-and-go freezer</p>
-      <h1>Last-minute cake energy.</h1>
-      <p style="max-width:50ch;font-size:1.15rem;">We keep 20+ ice cream cakes and cupcakes ready so a birthday, reunion, or “I forgot” still looks planned. Flavor of the cake follows the scoop — mint chip means a green cake with chocolate flecks.</p>
+      <p class="sec-kicker">Pickup only · three shops</p>
+      <h1>Order the freezer.</h1>
+      <p style="max-width:56ch;font-size:1.15rem;">Cakes, cupcakes, ice cream cookies, pints, party tubs, pupcakes. Pick a category, customize flavor and pickup, then pay on the cart page. Cakes need 3 days; gallons need 7. All specialty sales are final.</p>
     </div>
   </section>
   <section style="padding-top:0;">
     <div class="container">
-      <div class="treat-grid">
-        <article class="treat">
-          <div class="ph" style="background:linear-gradient(135deg,#ff8fb8,#ffe14a);"></div>
-          <div class="body">
-            <h3>Ice cream cakes</h3>
-            <p>Built entirely of homemade ice cream, bright white frosting, chocolate or peanut-butter drizzle. Extra toppings if you’re feeling extra.</p>
-          </div>
-        </article>
-        <article class="treat">
-          <div class="ph" style="background:linear-gradient(135deg,#19c98a,#5b4dff);"></div>
-          <div class="body">
-            <h3>Cupcakes</h3>
-            <p>Same churn, smaller celebration. Perfect for classrooms, hotel rooms, and “just because” nights on Steinwehr.</p>
-          </div>
-        </article>
-        <article class="treat">
-          <div class="ph" style="background:linear-gradient(135deg,#ff9f43,#4a2c1f);"></div>
-          <div class="body">
-            <h3>Pre-scooped cups</h3>
-            <p>Packed from today’s case. Pick a flavor from the library — limited drops sit at the bottom of the list until they’re gone.</p>
-          </div>
-        </article>
-      </div>
-      <p style="margin-top:1.6rem;"><a class="btn btn-primary" href="order.html">Order cakes, cupcakes &amp; cookies</a> <a class="btn" href="menu.html">See prices</a></p>
+      <div class="cat-tabs" id="order-tabs"></div>
+      <p id="order-intro" style="max-width:60ch;color:var(--muted);"></p>
+      <div class="product-grid" id="order-grid"></div>
+      <p style="margin-top:1.6rem;"><a class="btn btn-choc" href="cart.html">Go to cart &amp; pay</a></p>
     </div>
   </section>
 </main>
@@ -82,6 +62,6 @@
 <script src="flavors-data.js"></script>
 <script src="shop-data.js"></script>
 <script src="shop.js"></script>
-<script src="main.js" defer></script>
+<script src="main.js"></script>
 </body>
 </html>

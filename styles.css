@@ -467,4 +467,83 @@ footer a{color:var(--lemon);text-decoration:none;font-weight:700;}
   nav.main-nav.open{display:flex;}
   .hamburger{display:block;}
   .header-actions .btn{display:none;}
+  .header-actions .btn-keep{display:inline-flex;}
 }
+
+.cart-count{
+  display:inline-flex;min-width:1.35rem;height:1.35rem;align-items:center;justify-content:center;
+  background:var(--chocolate);color:var(--lemon);border-radius:999px;font-size:.75rem;padding:0 .35rem;
+}
+
+.menu-board{display:grid;grid-template-columns:repeat(2,1fr);gap:1.1rem;}
+@media(max-width:800px){.menu-board{grid-template-columns:1fr;}}
+.menu-col{
+  background:var(--cream);border:3px solid var(--chocolate);border-radius:var(--radius-lg);
+  padding:1.3rem;box-shadow:7px 7px 0 var(--chocolate);
+}
+.menu-col h2{font-family:var(--ff-display);font-weight:400;font-size:1.7rem;}
+.price-list{list-style:none;padding:0;margin:.6rem 0 0;}
+.price-list li{
+  display:flex;justify-content:space-between;gap:1rem;align-items:baseline;
+  padding:.55rem 0;border-bottom:1px dashed var(--line);
+}
+.price-list em{display:block;font-style:normal;font-size:.82rem;color:var(--muted);font-weight:500;}
+.price-list b{white-space:nowrap;font-size:1.05rem;}
+
+.cat-tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.2rem 0 1.4rem;}
+.cat-tabs .btn.is-active,
+.hero-actions .btn.is-active{background:var(--strawberry);color:#fff;}
+
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+@media(max-width:900px){.product-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.product-grid{grid-template-columns:1fr;}}
+.product-card{
+  background:#fff;border:3px solid var(--chocolate);border-radius:var(--radius-md);
+  overflow:hidden;box-shadow:6px 6px 0 var(--chocolate);display:flex;flex-direction:column;
+}
+.product-card .ph{height:110px;}
+.product-card .body{padding:1rem 1.1rem 1.2rem;display:flex;flex-direction:column;gap:.35rem;flex:1;}
+.product-card .price{font-family:var(--ff-display);font-size:1.4rem;color:var(--strawberry);margin:0;}
+.product-card .btn{margin-top:auto;}
+
+.shop-modal{
+  position:fixed;inset:0;background:rgba(42,22,15,.55);z-index:80;
+  display:grid;place-items:center;padding:1rem;
+}
+.shop-modal-card{
+  background:var(--vanilla);border:3px solid var(--chocolate);border-radius:24px;
+  padding:1.4rem;max-width:520px;width:100%;max-height:90vh;overflow:auto;
+  box-shadow:12px 12px 0 var(--chocolate);position:relative;
+}
+.modal-close{
+  position:absolute;top:.6rem;right:.7rem;border:0;background:none;font-size:1.8rem;cursor:pointer;
+}
+.tiny{font-size:.85rem;color:var(--muted);}
+.shop-toast{
+  position:fixed;bottom:4.2rem;left:50%;transform:translateX(-50%) translateY(12px);
+  background:var(--mint);border:3px solid var(--chocolate);border-radius:999px;
+  padding:.55rem 1.1rem;font-weight:800;z-index:90;opacity:0;transition:.2s;
+}
+.shop-toast.in{opacity:1;transform:translateX(-50%) translateY(0);}
+
+.cart-layout{display:grid;grid-template-columns:1.15fr .85fr;gap:1.2rem;align-items:start;}
+@media(max-width:860px){.cart-layout{grid-template-columns:1fr;}}
+.cart-line{
+  display:grid;grid-template-columns:1fr auto auto auto;gap:.7rem;align-items:center;
+  border:3px solid var(--chocolate);border-radius:16px;padding:.8rem 1rem;background:#fff;margin:.6rem 0;
+}
+@media(max-width:640px){.cart-line{grid-template-columns:1fr 1fr;}}
+.cart-line p{margin:.2rem 0 0;font-size:.85rem;color:var(--muted);}
+.cart-qty{display:flex;align-items:center;gap:.4rem;}
+.cart-qty button{
+  width:32px;height:32px;border:2px solid var(--chocolate);border-radius:8px;background:var(--lemon);
+  font-weight:800;cursor:pointer;
+}
+.totals{display:flex;justify-content:space-between;margin:.35rem 0;font-weight:700;}
+.totals.grand{font-size:1.25rem;border-top:3px solid var(--chocolate);padding-top:.7rem;margin-top:.7rem;}
+.pay-card{background:#fff3fb;}
+
+.auth-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
+@media(max-width:800px){.auth-grid{grid-template-columns:1fr;}}
+.order-list{list-style:none;padding:0;}
+.order-list li{padding:.45rem 0;border-bottom:1px dashed var(--line);}

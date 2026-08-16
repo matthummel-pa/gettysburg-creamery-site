@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cart &amp; payment — Pintfield Creamery</title>
+<meta name="description" content="Pintfield cart and checkout. Log in to pay for cake, cupcake, cookie, and pint pickup orders.">
+<link rel="canonical" href="https://matthummel-pa.github.io/gettysburg-creamery-site/cart.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Shrikhand&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Pintfield<small>Gettysburg creamery</small></span></a>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html">Today</a>
+      <a href="menu.html">Menu</a>
+      <a href="order.html">Order</a>
+      <a href="flavors.html">Flavors</a>
+      <a href="locations.html">Locations</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn" href="account.html" data-account-link>Log in</a>
+      <a class="btn btn-lemon btn-keep" href="cart.html">Cart <span class="cart-count" data-cart-count>0</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <p class="sec-kicker">Cart · pay · pickup</p>
+      <h1>Your cart.</h1>
+      <p style="max-width:52ch;">This is a separate pay desk from the menu — same idea as a real shop: build the order, then settle up. Concept checkout does not charge a real card.</p>
+    </div>
+  </section>
+  <section style="padding-top:0;">
+    <div class="container">
+      <div id="cart-empty" class="form-card">
+        <h3>Cart is empty.</h3>
+        <p>Add a cake, cupcake, cookie, or pint from the order page.</p>
+        <a class="btn btn-primary" href="order.html">Shop treats</a>
+      </div>
+
+      <div id="cart-panel" class="cart-layout" hidden>
+        <div class="form-card">
+          <h3>Items</h3>
+          <ul class="order-list" id="cart-lines"></ul>
+          <div class="totals"><span>Subtotal</span><span id="cart-subtotal">$0.00</span></div>
+          <div class="totals"><span>PA sales tax (6%)</span><span id="cart-tax">$0.00</span></div>
+          <div class="totals grand"><span>Total</span><span id="cart-grand">$0.00</span></div>
+        </div>
+
+        <div class="form-card pay-card">
+          <h3>Pay &amp; pickup</h3>
+          <div id="pay-gate">
+            <p>Log in to pay. Guest checkout stays off so cake orders stay attached to a name and phone-free email.</p>
+            <a class="btn btn-primary" href="account.html">Customer login</a>
+          </div>
+          <form id="pay-form" hidden>
+            <label>Name on order <input name="name" type="text" required autocomplete="name"></label>
+            <label>Email <input name="email" type="email" required autocomplete="email"></label>
+            <label>Pickup shop
+              <select name="shop" required>
+                <option>Gettysburg</option>
+                <option>New Oxford</option>
+                <option>McSherrystown</option>
+              </select>
+            </label>
+            <label>Card number <input name="card" type="text" inputmode="numeric" autocomplete="cc-number" placeholder="4242 4242 4242 4242" required></label>
+            <div class="forms-grid" style="grid-template-columns:1fr 1fr;margin-top:0;">
+              <label>Exp <input name="exp" type="text" placeholder="08/28" required></label>
+              <label>CVC <input name="cvc" type="text" placeholder="123" required></label>
+            </div>
+            <p class="tiny">Demo pay desk — no charge is sent. On a real site this would go through a processor. All specialty sales are final.</p>
+            <button class="btn btn-primary" type="submit" style="margin-top:1rem;width:100%;">Place pickup order</button>
+          </form>
+          <div id="pay-done" hidden>
+            <p class="sec-kicker">Order locked</p>
+            <h3>See you at the window.</h3>
+            <p>Order <strong data-order-id></strong> · <strong data-order-total></strong></p>
+            <p>We’ll have it in the pickup freezer. No phones — if something’s wrong, use the contact form.</p>
+            <a class="btn btn-mint" href="account.html">View in your account</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Pintfield Creamery concept.</span>
+      <span>Ridges &amp; Valleys Studio, Gettysburg PA.</span>
+    </div>
+  </div>
+</footer>
+<a href="#" class="concept-badge" id="concept-badge">Concept · Ridges &amp; Valleys Studio</a>
+<script src="flavors-data.js"></script>
+<script src="shop-data.js"></script>
+<script src="shop.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
