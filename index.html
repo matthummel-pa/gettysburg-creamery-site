@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pintfield Creamery — Gettysburg ice cream, churned fresh daily</title>
+<meta name="description" content="Concept creamery for Gettysburg & Adams County: 32 scoops a day, dairy-free and no-sugar-added tubs, cakes, and a live Scoop Board. A Ridges & Valleys Studio design concept — not a real business.">
+<link rel="canonical" href="https://matthummel-pa.github.io/gettysburg-creamery-site/">
+<meta property="og:title" content="Pintfield Creamery — Gettysburg">
+<meta property="og:description" content="32 scoops. Churned this morning. A bold ice cream concept by Ridges & Valleys Studio.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Shrikhand&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "IceCreamShop",
+  "name": "Pintfield Creamery",
+  "description": "Design concept for a Gettysburg creamery by Ridges & Valleys Studio. Not a real business.",
+  "url": "https://matthummel-pa.github.io/gettysburg-creamery-site/",
+  "telephone": "+1-717-555-0192",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1101 Biglerville Road",
+    "addressLocality": "Gettysburg",
+    "addressRegion": "PA",
+    "postalCode": "17325",
+    "addressCountry": "US"
+  },
+  "openingHours": "Mo-Su 11:00-21:00"
+}
+</script>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand" aria-label="Pintfield Creamery home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Pintfield<small>Gettysburg creamery</small></span>
+    </a>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html" class="is-active">Today</a>
+      <a href="flavors.html">Flavors</a>
+      <a href="treats.html">Cakes &amp; cups</a>
+      <a href="locations.html">Locations</a>
+      <a href="contact.html">Contact / jobs</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-lemon" href="scoop-board.html">Scoop Board</a>
+      <a class="btn btn-primary" href="contact.html">Say hi</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" data-sprinkles>
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Open daily · 11am–9pm · holidays too</p>
+        <h1>32 scoops. <em>Churned this morning.</em></h1>
+        <p class="lead">Pintfield is a Gettysburg creamery concept with a live freezer case, three Adams County shops, and a Scoop Board the owner can update — or schedule — without calling a developer.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#todays-case">See today’s case</a>
+          <a class="btn btn-mint" href="locations.html">Find a shop</a>
+        </div>
+        <div class="hero-meta">
+          <div><b>32</b><span>daily ice cream flavors</span></div>
+          <div><b>4+4</b><span>dairy-free &amp; no-sugar-added</span></div>
+          <div><b>3</b><span>shops, one churn crew</span></div>
+        </div>
+      </div>
+      <div class="drip-art" aria-hidden="true">
+        <div class="scoop-stack">
+          <div class="scoop s1"></div>
+          <div class="scoop s2"></div>
+          <div class="scoop s3"></div>
+          <div class="cone"></div>
+        </div>
+        <span class="drip d1"></span>
+        <span class="drip d2"></span>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="flavor-marquee">
+      <span>Adams County Sweet Cream · Peach Orchard Swirl · Mint Chip Parade · Blue Monster · Salty Caramel</span>
+      <span>Adams County Sweet Cream · Peach Orchard Swirl · Mint Chip Parade · Blue Monster · Salty Caramel</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="case-meta reveal">
+        <div class="sec-head">
+          <p class="sec-kicker">The live freezer</p>
+          <h2>Today’s case · <span id="case-date">today</span></h2>
+          <p>Flavors rotate because we make them here, every morning. This board is the same one the owner publishes from the Scoop Board — tap a tub, pick a swirl, skip the “do you have…?” text.</p>
+        </div>
+        <div>
+          <div class="featured-card" id="featured-scoop"></div>
+          <p class="note-chip" id="case-note" style="margin-top:.8rem;">Loading today’s note…</p>
+          <p id="next-drop" class="mono" style="margin-top:.8rem;font-size:.72rem;color:var(--muted);"></p>
+        </div>
+      </div>
+      <div class="freezer" id="todays-case" aria-label="Today's 32 flavors"></div>
+
+      <div class="special-grid reveal" style="margin-top:1.6rem;">
+        <div class="special-col">
+          <span class="tag df">Dairy free</span>
+          <h3>Four tubs, always.</h3>
+          <p>Coconut and oat bases. Same freezer energy.</p>
+          <div class="mini-tubs" id="df-case"></div>
+        </div>
+        <div class="special-col">
+          <span class="tag nsa">No sugar added</span>
+          <h3>Still a real scoop.</h3>
+          <p>Four NSA flavors daily so nobody gets left at the window.</p>
+          <div class="mini-tubs" id="nsa-case"></div>
+        </div>
+      </div>
+      <p style="margin-top:1.4rem;"><a class="btn btn-choc" href="scoop-board.html">Owner: update or schedule flavors</a></p>
+    </div>
+  </section>
+
+  <section style="background:linear-gradient(180deg,#fff3fb,#fff8ee);">
+    <div class="container split">
+      <div class="blob-panel reveal" aria-hidden="true"></div>
+      <div class="reveal">
+        <p class="sec-kicker">Why Pintfield</p>
+        <h2 class="display" style="font-size:clamp(2rem,4vw,3rem);">We don’t do “maybe tomorrow.” We churn tonight’s leftovers into tomorrow’s case.</h2>
+        <p>Inspired by the way a great local creamery actually runs: 32 flavors on the board, cakes in the grab-and-go freezer, three shops, and a crew that would rather scoop than sit on the phone.</p>
+        <p>We currently <strong>don’t publish shop phone numbers</strong> — too many scam calls. Walk in, or send the owner a note.</p>
+        <div class="stat-row">
+          <div class="stat"><b>6am</b>first churn</div>
+          <div class="stat"><b>20+</b>cakes in the freezer</div>
+          <div class="stat"><b>2026</b>new Gettysburg shop</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="sec-head reveal">
+        <p class="sec-kicker">Three shops</p>
+        <h2>Gettysburg, New Oxford, McSherrystown.</h2>
+        <p>Same recipes. Same 11–9. Same “we’ll find you something you like” promise.</p>
+      </div>
+      <div class="loc-grid">
+        <article class="loc-card reveal">
+          <h3>Gettysburg</h3>
+          <span class="hours">11am – 9pm daily</span>
+          <p>1101 Biglerville Road<br>Gettysburg, PA 17325</p>
+          <p>Open here until the new building at 1153 Biglerville Road is ready — late summer 2026 — indoor + outdoor seating.</p>
+        </article>
+        <article class="loc-card reveal">
+          <h3>New Oxford</h3>
+          <span class="hours">11am – 9pm daily</span>
+          <p>400 Lincoln Way East<br>New Oxford, PA 17350</p>
+          <p>Highway-side pints, cakes, and the full 32-scoop case.</p>
+        </article>
+        <article class="loc-card reveal">
+          <h3>McSherrystown</h3>
+          <span class="hours">11am – 9pm daily</span>
+          <p>5705 Hanover Road<br>Hanover, PA 17331</p>
+          <p>The Hanover-road scoop stop. Same board, same extra dairy-free tubs.</p>
+        </article>
+      </div>
+      <div class="move-banner reveal">
+        <strong>Gettysburg is moving 0.1 miles north.</strong> We’ll keep scooping at 1101 until 1153 opens. When we have a date, it will land on this homepage the same way flavors do — from the Scoop Board.
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="brand-name" style="color:var(--vanilla);">Pintfield</div>
+        <p>Fresh-churned ice cream for Gettysburg and Adams County. A design concept by Ridges &amp; Valleys Studio — not a real business.</p>
+        <p class="concept-note">Names, hours, and addresses are placeholders modeled on a local creamery pattern (rotating 32-flavor case, three shops, no public phones). Yours would use your real brand.</p>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <p>Gettysburg · New Oxford · McSherrystown<br>Open daily 11am–9pm</p>
+      </div>
+      <div>
+        <h4>Menu</h4>
+        <ul>
+          <li><a href="flavors.html">Flavor library</a></li>
+          <li><a href="treats.html">Cakes &amp; cups</a></li>
+          <li><a href="scoop-board.html">Scoop Board</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="contact.html">Contact the owner</a></li>
+          <li><a href="contact.html#jobs">Apply for a job</a></li>
+          <li><a href="https://ridgesandvalleys.com/contact/" target="_blank" rel="noopener">Ridges &amp; Valleys</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Pintfield Creamery concept.</span>
+      <span>Design concept by Ridges &amp; Valleys Studio, Gettysburg PA.</span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="concept-badge" id="concept-badge">Concept · Ridges &amp; Valleys Studio</a>
+<script src="flavors-data.js"></script>
+<script src="scoop-board.js"></script>
+<script src="main.js" defer></script>
+</body>
+</html>

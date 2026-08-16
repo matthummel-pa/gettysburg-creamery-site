@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scoop Board — Pintfield Creamery owner tools</title>
+<meta name="description" content="Owner Scoop Board: pack today's 32-tub freezer, feature a scoop, and schedule flavor drops that auto-publish on the homepage.">
+<link rel="canonical" href="https://matthummel-pa.github.io/gettysburg-creamery-site/scoop-board.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Shrikhand&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Pintfield<small>Gettysburg creamery</small></span></a>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html">Today</a>
+      <a href="flavors.html">Flavors</a>
+      <a href="treats.html">Cakes &amp; cups</a>
+      <a href="locations.html">Locations</a>
+      <a href="contact.html">Contact / jobs</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-lemon" href="scoop-board.html">Scoop Board</a>
+      <a class="btn btn-primary" href="contact.html">Say hi</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <p class="sec-kicker">Owner tool · concept demo</p>
+      <h1>The Scoop Board.</h1>
+      <p style="max-width:58ch;font-size:1.15rem;">Pack the freezer like you do in the shop: tap a tub, tap a flavor. Publish tonight’s case instantly, or schedule a drop for a future morning. When that date arrives, the homepage flips by itself — no developer, no “can you update the flavors?” text.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container">
+      <div id="board-lock" class="board-lock">
+        <form class="pin-box" id="pin-form">
+          <h2 class="display" style="font-size:2rem;">Crew pin</h2>
+          <p>Demo lock so visitors don’t remix the case by accident. PIN is the Gettysburg zip: <strong>17325</strong></p>
+          <label for="pin-input">PIN</label>
+          <input id="pin-input" type="password" inputmode="numeric" autocomplete="off" required>
+          <button class="btn btn-primary" type="submit" style="margin-top:1rem;width:100%;">Unlock the freezer</button>
+          <p id="pin-err" class="form-status err" role="status"></p>
+        </form>
+      </div>
+
+      <div id="board-app" class="board-app" hidden>
+        <div class="form-card">
+          <h3>1. Pack the case</h3>
+          <p>Click a slot (outlined = selected), then click a flavor chip to drop it in. 32 regular, 4 dairy-free, 4 no-sugar-added.</p>
+          <div class="toolbar">
+            <div class="field">
+              <label for="featured-select">Scoop of the day</label>
+              <select id="featured-select"></select>
+            </div>
+            <div class="field" style="flex:2;">
+              <label for="lineup-note">Homepage note</label>
+              <input id="lineup-note" type="text" maxlength="180" placeholder="We churned extra peach at 6am.">
+            </div>
+          </div>
+          <p class="mono" style="font-size:.72rem;color:var(--muted);">Flavor chips</p>
+          <div class="palette" id="flavor-palette"></div>
+          <p class="mono" style="font-size:.72rem;color:var(--muted);">Regular freezer · 32</p>
+          <div class="slot-grid" id="slots-regular"></div>
+          <div class="special-grid" style="margin-top:1rem;">
+            <div>
+              <p class="mono" style="font-size:.72rem;color:var(--muted);">Dairy-free · 4</p>
+              <div class="slot-grid" id="slots-df" style="grid-template-columns:repeat(4,1fr);"></div>
+            </div>
+            <div>
+              <p class="mono" style="font-size:.72rem;color:var(--muted);">No sugar added · 4</p>
+              <div class="slot-grid" id="slots-nsa" style="grid-template-columns:repeat(4,1fr);"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card" style="margin-top:1.2rem;">
+          <h3>2. Publish or schedule</h3>
+          <p>Publish writes today’s homepage case in this browser. Schedule queues a lineup; the public site auto-promotes it when that date arrives (checked on every page load).</p>
+          <div class="toolbar">
+            <div class="field">
+              <label for="lineup-date">Run date</label>
+              <input id="lineup-date" type="date">
+            </div>
+            <button type="button" class="btn btn-primary" id="publish-now">Publish to homepage now</button>
+            <button type="button" class="btn btn-lemon" id="schedule-btn">Schedule this lineup</button>
+            <button type="button" class="btn" id="reset-board">Reset demo</button>
+          </div>
+          <p id="board-status" class="form-status ok" role="status"></p>
+          <h4 style="margin-top:1rem;">Queued drops</h4>
+          <ul class="schedule-list" id="schedule-list"></ul>
+          <p style="margin-top:1rem;"><a class="btn btn-mint" href="index.html">View homepage case</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="concept-note">Production version would save to a CMS or Netlify Blobs so every visitor sees the same case. This concept stores the board in the browser so you can demo it without a backend.</p>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Pintfield Creamery concept.</span>
+      <span>Ridges &amp; Valleys Studio, Gettysburg PA.</span>
+    </div>
+  </div>
+</footer>
+<a href="#" class="concept-badge" id="concept-badge">Concept · Ridges &amp; Valleys Studio</a>
+<script src="flavors-data.js"></script>
+<script src="scoop-board.js"></script>
+<script src="main.js" defer></script>
+</body>
+</html>

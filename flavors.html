@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flavors — Pintfield Creamery</title>
+<meta name="description" content="The Pintfield flavor library: classics, dairy-free, no-sugar-added, and limited drops. Today's 32 live on the homepage Scoop Case.">
+<link rel="canonical" href="https://matthummel-pa.github.io/gettysburg-creamery-site/flavors.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Shrikhand&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Pintfield<small>Gettysburg creamery</small></span></a>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html">Today</a>
+      <a href="flavors.html" class="is-active">Flavors</a>
+      <a href="treats.html">Cakes &amp; cups</a>
+      <a href="locations.html">Locations</a>
+      <a href="contact.html">Contact / jobs</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-lemon" href="scoop-board.html">Scoop Board</a>
+      <a class="btn btn-primary" href="contact.html">Say hi</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <p class="sec-kicker">The library</p>
+      <h1>More flavors than we can freeze in one night.</h1>
+      <p style="max-width:52ch;font-size:1.15rem;">We don’t answer individual “do you have X today?” notes — the homepage case is the truth. This page is the full pantry the owner pulls from when they pack the 32-tub freezer.</p>
+      <div class="hero-actions">
+        <button type="button" class="btn btn-primary is-active" data-flavor-filter="all">All</button>
+        <button type="button" class="btn" data-flavor-filter="classic">Classics</button>
+        <button type="button" class="btn btn-mint" data-flavor-filter="dairy-free">Dairy-free</button>
+        <button type="button" class="btn" data-flavor-filter="nsa">No sugar added</button>
+        <button type="button" class="btn btn-lemon" data-flavor-filter="limited">Limited</button>
+      </div>
+    </div>
+  </section>
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="freezer" id="flavor-library" data-filter="all"></div>
+      <p style="margin-top:1.5rem;color:var(--muted);">Allergen note (concept): peanut, tree nut, wheat, egg, and soy show up in this kitchen. Ask at the window.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="brand-name" style="color:var(--vanilla);">Pintfield</div>
+        <p>A Ridges &amp; Valleys Studio concept — not a real business.</p>
+      </div>
+      <div><h4>Visit</h4><p>Three shops · 11am–9pm daily</p></div>
+      <div><h4>Menu</h4><ul><li><a href="index.html">Today’s case</a></li><li><a href="treats.html">Cakes</a></li></ul></div>
+      <div><h4>Studio</h4><ul><li><a href="https://ridgesandvalleys.com/contact/" target="_blank" rel="noopener">Get a quote</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Pintfield Creamery concept.</span>
+      <span>Ridges &amp; Valleys Studio, Gettysburg PA.</span>
+    </div>
+  </div>
+</footer>
+<a href="#" class="concept-badge" id="concept-badge">Concept · Ridges &amp; Valleys Studio</a>
+<script src="flavors-data.js"></script>
+<script src="scoop-board.js"></script>
+<script src="main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact &amp; jobs — Pintfield Creamery</title>
+<meta name="description" content="Contact the Pintfield owner or apply for a scooping job in Gettysburg, New Oxford, or McSherrystown. Concept site by Ridges & Valleys Studio.">
+<link rel="canonical" href="https://matthummel-pa.github.io/gettysburg-creamery-site/contact.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Shrikhand&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand"><span class="brand-mark" aria-hidden="true"></span><span class="brand-name">Pintfield<small>Gettysburg creamery</small></span></a>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html">Today</a>
+      <a href="flavors.html">Flavors</a>
+      <a href="treats.html">Cakes &amp; cups</a>
+      <a href="locations.html">Locations</a>
+      <a href="contact.html" class="is-active">Contact / jobs</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-lemon" href="scoop-board.html">Scoop Board</a>
+      <a class="btn btn-primary" href="#owner">Say hi</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <p class="sec-kicker">Inbox, not a phone tree</p>
+      <h1>Write the owner. Or apply to scoop.</h1>
+      <p style="max-width:54ch;font-size:1.15rem;">We don’t list shop phones (scam calls). Flavor questions live on the homepage case — we won’t reply to “do you have Cookie Dough today?” because the answer changes by lunch. For everything else, use a form below.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;" id="owner">
+    <div class="container">
+      <div class="forms-grid">
+        <form class="form-card" name="owner-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-ajax data-success="Note sent. The owner will scoop you a reply.">
+          <input type="hidden" name="form-name" value="owner-contact">
+          <input type="hidden" name="subject" value="Pintfield — visitor note for the owner">
+          <p class="honeypot"><label>Leave empty <input name="bot-field"></label></p>
+          <span class="tag">Visitors</span>
+          <h3>Contact the owner</h3>
+          <p>Parties, cakes, wholesale pints, press, or a human question.</p>
+          <label for="c-name">Your name</label>
+          <input id="c-name" name="name" type="text" required autocomplete="name">
+          <label for="c-email">Email</label>
+          <input id="c-email" name="email" type="email" required autocomplete="email">
+          <label for="c-shop">Which shop?</label>
+          <select id="c-shop" name="location">
+            <option>Not shop-specific</option>
+            <option>Gettysburg</option>
+            <option>New Oxford</option>
+            <option>McSherrystown</option>
+          </select>
+          <label for="c-reason">What’s this about?</label>
+          <select id="c-reason" name="reason">
+            <option>General hello</option>
+            <option>Custom cake / party</option>
+            <option>Catering / event</option>
+            <option>Press or partnership</option>
+            <option>Something else</option>
+          </select>
+          <label for="c-msg">Message</label>
+          <textarea id="c-msg" name="message" required placeholder="Skip flavor-availability questions — check today’s case."></textarea>
+          <button class="btn btn-primary" type="submit" style="margin-top:1rem;">Send to the owner</button>
+          <p class="form-status" role="status"></p>
+        </form>
+
+        <form class="form-card job" id="jobs" name="job-application" method="POST" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" data-ajax data-success="Application in. If we have a window, we'll write you.">
+          <input type="hidden" name="form-name" value="job-application">
+          <input type="hidden" name="subject" value="Pintfield — job application">
+          <p class="honeypot"><label>Leave empty <input name="bot-field"></label></p>
+          <span class="tag ltd">Hiring</span>
+          <h3>Apply to work here</h3>
+          <p>Scoopers, cake decorators, and shift leads. Weekend energy required. Bring your own enthusiasm; we supply the sprinkles.</p>
+          <label for="j-name">Your name</label>
+          <input id="j-name" name="name" type="text" required autocomplete="name">
+          <label for="j-email">Email</label>
+          <input id="j-email" name="email" type="email" required autocomplete="email">
+          <label for="j-phone">Phone</label>
+          <input id="j-phone" name="phone" type="tel" autocomplete="tel">
+          <label for="j-role">Role you’re after</label>
+          <select id="j-role" name="role" required>
+            <option value="">Pick one</option>
+            <option>Scooper / guest experience</option>
+            <option>Cake decorator</option>
+            <option>Shift lead</option>
+            <option>Churn / production</option>
+            <option>Whatever you need — I’m flexible</option>
+          </select>
+          <label for="j-shop">Preferred shop</label>
+          <select id="j-shop" name="preferred-location">
+            <option>Any of the three</option>
+            <option>Gettysburg</option>
+            <option>New Oxford</option>
+            <option>McSherrystown</option>
+          </select>
+          <label for="j-when">When can you start?</label>
+          <input id="j-when" name="start-date" type="date">
+          <label for="j-hours">Hours you can work</label>
+          <textarea id="j-hours" name="availability" placeholder="Evenings? Weekends? Summer only?"></textarea>
+          <label for="j-resume">Resume (optional)</label>
+          <input id="j-resume" name="resume" type="file" accept=".pdf,.doc,.docx">
+          <label for="j-why">Why Pintfield?</label>
+          <textarea id="j-why" name="message" required placeholder="Favorite scoop, favorite chaos, why you’d be great at the window."></textarea>
+          <button class="btn btn-mint" type="submit" style="margin-top:1rem;">Submit application</button>
+          <p class="form-status" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Pintfield Creamery concept.</span>
+      <span>Ridges &amp; Valleys Studio, Gettysburg PA.</span>
+    </div>
+  </div>
+</footer>
+<a href="#" class="concept-badge" id="concept-badge">Concept · Ridges &amp; Valleys Studio</a>
+<script src="main.js" defer></script>
+</body>
+</html>
